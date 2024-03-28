@@ -1,5 +1,6 @@
 ﻿using System;
 using ManagementSystem.Models;
+using ManagementSystem.Data;
 
 namespace ManagementSystem.Services
 {
@@ -17,6 +18,29 @@ namespace ManagementSystem.Services
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
             return product;
+        }
+
+        public async Task<Product> GetProductByIdAsync(int id)
+        {
+            return await _context.Products.FindAsync(id);
+        }
+
+
+        public async Task<Product> UpdateProductAsync(Product product)
+        {
+            var existingProduct = await _context.Products.FindAsync(product.Id);
+            if (existingProduct == null)
+            {
+                throw new ArgumentException("Product not found");
+            }
+
+            existingProduct.Description = product.Description;
+            existingProduct.Brand = product.Brand;
+            existingProduct.UnitOfMeasure = product.UnitOfMeasure;
+
+            await _context.SaveChangesAsync();
+
+            return existingProduct;
         }
     }
 }
