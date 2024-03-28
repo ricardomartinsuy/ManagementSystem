@@ -12,10 +12,6 @@ namespace ManagementSystem.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
 
-        public async Task<List<Product>> ListProducts()
-        {
-            return await Product.FromSqlRaw("EXEC dbo.ListProducts").ToListAsync();
-        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>()
@@ -23,6 +19,11 @@ namespace ManagementSystem.Data
                 .WithMany(s => s.Products)
                 .HasForeignKey(p => p.SupplierId)
                 .OnDelete(DeleteBehavior.Restrict);
+        }
+
+        public async Task<List<Product>> ListProducts()
+        {
+            return await Products.FromSqlRaw("EXEC dbo.ListProducts").ToListAsync();
         }
     }
 }
