@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ManagementSystem.Services;
 using ManagementSystem.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ManagementSystem.Controllers
 {
@@ -71,6 +72,18 @@ namespace ManagementSystem.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProdutos()
+        {
+            var produtos = await _productService.GetProducts(); 
+
+            if (produtos == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(produtos);
+        }
 
     }
 }

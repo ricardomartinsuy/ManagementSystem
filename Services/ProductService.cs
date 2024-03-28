@@ -42,6 +42,11 @@ namespace ManagementSystem.Services
 
             return existingProduct;
         }
+
+        public async Task<List<Product>> GetProducts()
+        {
+            return await _context.ListProducts();
+        }
     }
 }
 
