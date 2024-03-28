@@ -74,4 +74,3 @@
 /Users/ricardomartins/Documents/ManagementSystem/ManagementSystem/obj/Debug/net7.0/ManagementSystem.pdb
 /Users/ricardomartins/Documents/ManagementSystem/ManagementSystem/obj/Debug/net7.0/ManagementSystem.genruntimeconfig.cache
 /Users/ricardomartins/Documents/ManagementSystem/ManagementSystem/obj/Debug/net7.0/ref/ManagementSystem.dll
-/Users/ricardomartins/Documents/ManagementSystem/ManagementSystem/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.InMemory.dll
