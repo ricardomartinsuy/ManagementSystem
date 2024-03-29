@@ -33,6 +33,7 @@ namespace ManagementSystem.Controllers
             }
         }
 
+
         // GET: api/Product/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProductById(int id)

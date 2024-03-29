@@ -11,6 +11,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<ISupplierService, SupplierService>();
+builder.Services.AddHttpClient<IViaCEPService, ViaCEPService>();
+
+
 
 builder.Services.AddControllers();
 

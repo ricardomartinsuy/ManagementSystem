@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ManagementSystem.Models
 {
@@ -19,9 +20,6 @@ namespace ManagementSystem.Models
         [Required(ErrorMessage = "Product photo is required.")]
         public string Photo { get; set; }
 
-        // Relationship with supplier
-        public int SupplierId { get; set; }
-        public required Supplier Supplier { get; set; }
     }
 }
 
