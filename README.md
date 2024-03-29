@@ -30,6 +30,21 @@ Para acessar o Swagger, siga estas etapas:
 2. Abra um navegador da web e navegue para o seguinte URL: `http://localhost:54352/swagger` 
 3. Isso abrirá a interface Swagger, onde você pode ver a lista de endpoints da API, seus parâmetros e modelos de dados esperados.
 
+### Aplicando Migrações ao Banco de Dados do Usuário
+
+Antes de executar o projeto, você precisa garantir que as migrações estejam aplicadas ao banco de dados que você vai utilizar. Siga os passos abaixo para aplicar as migrações:
+
+Abra um terminal na raiz do projeto.
+
+Execute o seguinte comando para aplicar as migrações ao banco de dados:
+
+dotnet ef database update
+
+Este comando aplicará todas as migrações pendentes ao banco de dados configurado na string de conexão do projeto.
+
+Observação:
+Certifique-se de que a string de conexão do banco de dados esteja configurada corretamente no arquivo appsettings.json ou appsettings.Development.json, dependendo do ambiente.
+
 ## Executando o Projeto
 
 Para executar o projeto localmente, siga estas etapas:
