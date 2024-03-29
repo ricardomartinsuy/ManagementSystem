@@ -38,7 +38,7 @@ Abra um terminal na raiz do projeto.
 
 Execute o seguinte comando para aplicar as migrações ao banco de dados:
 
-dotnet ef database update
+`dotnet ef database update`
 
 Este comando aplicará todas as migrações pendentes ao banco de dados configurado na string de conexão do projeto.
 
