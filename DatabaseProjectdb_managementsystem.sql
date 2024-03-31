@@ -80,3 +80,13 @@ VALUES
     ('Fornecedor 3', '23.456.789/0001-03', 'Rua C, 789', '(33) 2345-6789'),
     ('Fornecedor 4', '45.678.901/0001-04', 'Rua D, 987', '(44) 5678-9012'),
     ('Fornecedor 5', '67.890.123/0001-05', 'Rua E, 654', '(55) 6789-0123');
+
+GO
+
+
+CREATE PROCEDURE dbo.ListarProdutos
+AS
+BEGIN
+    SELECT ID, Descricao, Marca, Preco
+    FROM Produtos;
+END;
